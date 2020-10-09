@@ -1,2 +1,2 @@
-# cmpe131-grocery-webapp
+# cmpe131
 cmpe 131 Project 1
