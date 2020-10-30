@@ -97,7 +97,7 @@
       <div class="main">
       <div class="column menu active">
       <div id="myBtnContainer">
-        <button class="btngroup active" onclick="filterSelection('all')">Show all</button>
+        <button class="btngroup" onclick="filterSelection('all')">Show all</button>
         <button class="btngroup" onclick="filterSelection('produce')">Produce</button>
         <button class="btngroup" onclick="filterSelection('dairy')">Dairy & Eggs</button>
         <button class="btngroup" onclick="filterSelection('meat')">Meat</button>
@@ -573,17 +573,6 @@
       element.className = arr1.join(" ");
     }
 
-
-    // Add active class to the current button (highlight it)
-    var btnContainer = document.getElementById("myBtnContainer");
-    var btns = btnContainer.getElementsByClassName("btngroup");
-    for (var i = 0; i < btns.length; i++) {
-      btns[i].addEventListener("click", function(){
-        var current = document.getElementsByClassName("active");
-        current[0].className = current[0].className.replace(" active", "");
-        this.className += " active";
-      });
-    }
     </script>
   </body>
 </html>
