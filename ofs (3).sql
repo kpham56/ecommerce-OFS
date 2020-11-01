@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 31, 2020 at 04:29 AM
+-- Generation Time: Nov 01, 2020 at 05:25 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -119,8 +119,30 @@ CREATE TABLE `productDetail` (
 INSERT INTO `productDetail` (`productID`, `categoryID`, `productName`, `price`, `quantity`, `inventoryDate`, `URL_image`) VALUES
 ('apples', 0, 'Honey Crisp Apples', 1.99, 50, '2020-10-29', 'dfasd'),
 ('avocados ', 0, 'Organic Hass Avocados ', 2.79, 50, '2020-10-29', 'dfasd'),
+('babyteethers', 3, 'Organic Baby Teethers', 3.39, 50, '2020-10-29', 'dfasd'),
+('bananas', 0, 'Organic Bananas', 4.49, 50, '2020-10-29', 'dfasd'),
+('beefsteak', 2, 'Boneless Beef Ribeye Steak', 14.99, 50, '2020-10-29', 'dfasd'),
+('broccoli', 0, 'Organic Broccoli', 2.99, 50, '2020-10-29', 'dfasd'),
+('cacaosnacks', 3, 'Organic Snacks Cacao', 9.99, 50, '2020-10-29', 'dfasd'),
+('celery', 0, 'Organic Celery Bunch', 2.69, 50, '2020-10-29', 'dfasd'),
+('chickenbreast', 2, 'Organic Chicken Breast', 5.49, 50, '2020-10-29', 'dfasd'),
+('chickentenders ', 2, 'Organic Chicken Tenders', 6.59, 50, '2020-10-29', 'dfasd'),
+('chickenwings', 2, 'Organic Chicken Wings', 6.49, 50, '2020-10-29', 'dfasd'),
+('coconutsnacks', 3, 'Organic Coconut Snacks ', 3.99, 50, '2020-10-29', 'dfasd'),
+('crackers', 3, 'Late July Crackers', 3.79, 50, '2020-10-29', 'dfasd'),
+('creamcheese', 1, 'Organic Valley Cream Cheese', 2.99, 50, '2020-10-29', 'dfasd'),
+('creamies', 3, 'Organic Creamies', 3.59, 50, '2020-10-29', 'dfasd'),
+('cripsychews', 3, 'Organic Crispy Chews ', 3.99, 50, '2020-10-29', 'dfasd'),
+('eggs', 1, 'Conestoga Eggs', 5.99, 50, '2020-10-29', 'dfasd'),
+('fruitsnacks', 3, 'Organic Fruit Snacks', 6.99, 50, '2020-10-29', 'dfasd'),
 ('lemons', 0, 'Organic Lemons', 3.99, 50, '2020-10-29', 'dfasd'),
-('strawberries', 0, 'Organic Strawberries', 5.89, 50, '2020-10-29', 'dfasd');
+('mangoes', 0, 'Organic Mangoes', 3.99, 50, '2020-10-29', 'dfasd'),
+('pjackcheese', 1, 'Pepper Jack Cheese', 4.99, 50, '2020-10-29', 'dfasd'),
+('popcorn', 3, 'Organic Sea Salt Popcorn ', 3.69, 50, '2020-10-29', 'dfasd'),
+('strawberries', 0, 'Organic Strawberries', 5.89, 50, '2020-10-29', 'dfasd'),
+('stringcheese', 1, 'Mozzarella String Cheese', 2.93, 50, '2020-10-29', 'dfasd'),
+('veggiepops', 3, 'Organic Veggie Pops', 5.54, 50, '2020-10-29', 'dfasd'),
+('waffles', 3, 'Organic Waffles', 3.99, 50, '2020-10-29', 'dfasd');
 
 -- --------------------------------------------------------
 
