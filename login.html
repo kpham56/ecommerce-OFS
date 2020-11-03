@@ -37,21 +37,21 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="homepage.html">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link" data-toggle="dropdown" href="account.html">Account</a>
+              <a class="nav-link active" data-toggle="dropdown" href="account.html">Account</a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="login.html">Log In</a>
+                <a class="dropdown-item active" href="login.html">Log In</a>
                 <a class="dropdown-item" href="registration.html">Register</a>
-                <a class="dropdown-item" href="account.html">Account</a>
+                <a class="dropdown-item" href="account.html">My Account</a>
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
+              <a class="nav-link" href="contact.html">Contacts</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="cart.html">Shopping Cart</a>
@@ -70,7 +70,7 @@
             <div class="card-body">
               <h2>Log In</h2>
               <div style="padding: 20px">
-                <form action="/action_page.php" class="needs-validation" novalidate>
+                <form action="/processLogin.php" class="needs-validation" novalidate method = "post">
                   <div class="form-group" style="width: 20%">
                     <label for="email">Email:</label>
                     <input type="text" class="form-control" id="email" placeholder="Enter email" name="email" required>
@@ -79,7 +79,7 @@
                   </div>
                   <div class="form-group" style="width: 20%">
                     <label for="pwd">Password:</label>
-                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password" required>
                     <div class="valid-feedback">Valid.</div>
                     <div class="invalid-feedback">Please fill out this field.</div>
                   </div>

@@ -69,11 +69,11 @@
       <div class="col-lg-8">
 
         <div class="card mt-4">
-          <img class="card-img-top img-fluid" src="pic/banana.jpg" alt="">
+          <img class="card-img-top" src="https://drive.google.com/thumbnail?id=17RilWgFLpC9g5KCs4DBTUF-UX6Y7Rs1j" alt="" style="width:60%; margin-left: auto; margin-right: auto;">
           <div class="card-body">
             <h3 class="card-title">Organic Bananas</h3>
             <p class="card-text">Organic Bananas, a fat-free food. Organic Bananas, a sodium free food</p>
-            <img class="img-fluid" src="pic/property.png" alt="">
+            <img class="img-fluid" src="https://drive.google.com/thumbnail?id=1l11r091LAfDqBLT6TOtNMakWGi6EKRpI" alt="" style="width:70%; margin-left: auto; margin-right: auto;">
           </div>
         </div>
         <!-- /.card -->
@@ -114,7 +114,17 @@
                <option value="2">3</option>
                <option value="3">4</option>
              </select>
-             <button type="submit" class="btn btn-success">Add To Cart</button>
+             <form action="" method="post">
+               <button type="submit" class="btn btn-success" id="myBtn">Add To Cart</button>
+             </form>
+             <div class="toast mt-3">
+              <div class="toast-header">
+                Success!
+              </div>
+              <div class="toast-body">
+                Item was successfully added to the cart.
+              </div>
+             </div>
            </form>
         </div>
       </div>
@@ -135,6 +145,14 @@
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+  <script>
+  $(document).ready(function(){
+    $('#myBtn').click(function(){
+      $('.toast').toast({delay: 4000});
+      $('.toast').toast('show');
+    });
+  });
+  </script>
 </body>
 
 </html>

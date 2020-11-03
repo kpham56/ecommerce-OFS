@@ -16,6 +16,9 @@
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
 
+    <link href="path/to/bootstrap-editable/css/bootstrap-editable.css" rel="stylesheet">
+    <script src="path/to/bootstrap-editable/js/bootstrap-editable.min.js"></script>
+
   </head>
 
   <body>
@@ -37,21 +40,21 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="homepage.html">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link" data-toggle="dropdown" href="account.html">Account</a>
+              <a class="nav-link active" data-toggle="dropdown" href="account.html">Account</a>
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="login.html">Log In</a>
                 <a class="dropdown-item" href="registration.html">Register</a>
-                <a class="dropdown-item" href="#">Account</a>
+                <a class="dropdown-item active" href="account.html">My Account</a>
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
+              <a class="nav-link" href="contact.html">Contacts</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="cart.html">Shopping Cart</a>
@@ -68,9 +71,116 @@
         <div class="col-lg-12">
           <div class="card mt-4">
             <div class="card-body">
-              <h2>IN PROGRESS</h2>
+              <h2>Hello, <?php echo $_POST["name"]; ?><br></h2>
+              <div class="tab">
+              <button class="tablinks" onclick="openCity(event, 'Info')" id="defaultOpen">Profile and Password</button>
+              <button class="tablinks" onclick="openCity(event, 'Orders')">Orders</button>
+              <button class="tablinks" onclick="openCity(event, 'Payment')">Payment Method</button>
+              </div>
+
+              <div id="Info" class="tabcontent">
+                <h4>Profile and Password</h4>
+                <div class="Mycontainer">
+                  <form>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="fname" class="control-label">First Name</label>
+                        <input type="text" class="form-control" id="fname" disabled placeholder="First Name">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="lname" class="control-label">Last Name</label>
+                        <input type="text" class="form-control" id="lname" disabled placeholder="Last Name">
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="inputEmail4" class="control-label">Email</label>
+                        <input type="email" class="form-control" id="email" disabled placeholder="Email">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="inputPassword4" class="control-label">Password</label>
+                        <input type="password" class="form-control" id="psw" disabled placeholder="Password">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="address" class="control-label">Address</label>
+                      <input type="text" class="form-control" id="address" disabled placeholder="Apartment, studio, or floor">
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="inputCity" class="control-label">City</label>
+                        <input type="text" class="form-control" id="city" disabled>
+                      </div>
+                      <div class="form-group col-md-4">
+                        <label for="inputState" class="control-label">State</label>
+                        <input type="text" class="form-control" id="state" disabled>
+                      </div>
+                      <div class="form-group col-md-2">
+                        <label for="inputZip" class="control-label">Zip</label>
+                        <input type="text" class="form-control" id="zip" disabled>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-sm-offset-2 col-sm-10">
+                        <button type="edit" class="btn btn-success" id="edit" onclick="return handleEdit()">Edit</button>
+                        <button type="submit" class="btn btn-success" id="save" hidden>Save Changes</button>
+                      </div>
+                    </div>
+                  </form>
+
+                </div>
+              </div>
+
+              <div id="Orders" class="tabcontent">
+                <h4>Previous Orders</h4>
+                <br>
+                <!-- Insert from database -->
+              </div>
+              <form>
+                <div id="Payment" class="tabcontent">
+                  <h4>Payment Method</h4>
+                  <br>
+                  <h6>Credit or debit card</h6>
+                  <form>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="fnameCard" class="control-label">First Name</label>
+                        <input type="text" class="form-control" id="fnameCard" disabled placeholder="First Name">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="lnameCard" class="control-label">Last Name</label>
+                        <input type="text" class="form-control" id="lnameCard" disabled placeholder="Last Name">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="card" class="control-label">Card Number</label>
+                      <input type="text" class="form-control" id="card" disabled placeholder="Card Number">
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-md-4">
+                        <label for="expirationM" class="control-label">Month</label>
+                        <input type="text" class="form-control" id="expirationM" disabled>
+                      </div>
+                      <div class="form-group col-md-4">
+                        <label for="expirationY" class="control-label">Year</label>
+                        <input type="text" class="form-control" id="expirationY" disabled>
+                      </div>
+                      <div class="form-group col-md-4">
+                        <label for="securityC" class="control-label">Security Code</label>
+                        <input type="text" class="form-control" id="securityCode" disabled>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-sm-offset-2 col-sm-10">
+                        <button type="editPayment" class="btn btn-success" id="editPayment" onclick="return handlePaymentEdit()">Edit</button>
+                        <button type="submit" class="btn btn-success" id="savePayment" hidden>Save Changes</button>
+                      </div>
+                    </div>
+                  </form>
+              </div>
+
+              </div>
             </div>
-          </div>
           <!-- /.card -->
 
         </div>
@@ -96,6 +206,53 @@
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+    <script>
+      function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+
+      // Get the element with id="defaultOpen" and click on it
+      document.getElementById("defaultOpen").click();
+
+      // Edid and save personal info
+      function handleEdit() {
+        document.getElementById('fname').disabled = false;
+        document.getElementById('lname').disabled = false;
+        document.getElementById('email').disabled = false;
+        document.getElementById('psw').disabled = false;
+        document.getElementById('address').disabled = false;
+        document.getElementById('city').disabled = false;
+        document.getElementById('state').disabled = false;
+        document.getElementById('zip').disabled = false;
+        document.getElementById('edit').hidden = true;
+        document.getElementById('save').hidden = false;
+
+        return false;
+      }
+
+      function handlePaymentEdit() {
+        document.getElementById('fnameCard').disabled = false;
+        document.getElementById('lnameCard').disabled = false;
+        document.getElementById('card').disabled = false;
+        document.getElementById('expirationM').disabled = false;
+        document.getElementById('expirationY').disabled = false;
+        document.getElementById('securityCode').disabled = false;
+        document.getElementById('editPayment').hidden = true;
+        document.getElementById('savePayment').hidden = false;
+
+        return false;
+      }
+    </script>
   </body>
 
 </html>
