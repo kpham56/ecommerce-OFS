@@ -15,6 +15,8 @@
     <!-- Custom styles for this template -->
     <link href="css/shop-homepage.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
   </head>
 
   <body>
@@ -46,11 +48,11 @@
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="login.html">Log In</a>
                 <a class="dropdown-item" href="registration.html">Register</a>
-                <a class="dropdown-item" href="account.html">Account</a>
+                <a class="dropdown-item" href="account.html">My Account</a>
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
+              <a class="nav-link" href="contact.html">Contacts</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="cart.html">Shopping Cart</a>
@@ -278,10 +280,10 @@
 
         <div class="column produce">
           <div class="card h-60">
-            <a href="#"><img class="card-img-top" src="pic/banana.jpg" alt=""></a>
+            <a href="banana.html"><img class="card-img-top" src="pic/banana.jpg" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">Organic Bananas</a>
+                <a href="banana.html">Organic Bananas</a>
               </h4>
               <h5>$4.49/3lb</h5>
               <p class="card-text"></p>
@@ -573,6 +575,16 @@
       element.className = arr1.join(" ");
     }
 
+    // Add active class to the current button (highlight it)
+    var btnContainer = document.getElementById("myBtnContainer");
+    var btns = btnContainer.getElementsByClassName("btngroup");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function(){
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+      });
+    }
     </script>
   </body>
 </html>
