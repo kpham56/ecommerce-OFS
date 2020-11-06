@@ -39,9 +39,8 @@
     else{
         echo "Form was not submitted.";
       }
+      header( "refresh:2;url=homepage.html" );
      ?>
-     <form action = "registration.html">
-       <input type="submit" value="return home">
-     </form>
+
   <body>
 </html>
