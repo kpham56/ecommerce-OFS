@@ -6,17 +6,16 @@
   <body>
     <h1> Processing</h1>
     <?php
-      if (isset($_POST["username"])&&isset($_POST["password"])){
-        if($_POST["username"] && $_POST["password"]){
-          $username = $_POST["username"];
+      if (isset($_POST["email"])&&isset($_POST["password"])&&isset($_POST["email"])&&isset($_POST["streetname"])&&isset($_POST["city"])){
+        if($_POST["email"] && $_POST["password"]){
+          $userid = $_POST["userid"];
+          $userType = $_POST["userType"];
           $password = $_POST["password"];
-          $address = $_POST["address"];
+          $email = $_POST["email"];
+          $streetname = $_POST["streetname"];
+          $city = $_POST["city"];
           $state = $_POST["state"];
           $zipcode = $_POST["zipcode"];
-          $cardnum = $_POST["cardnum"];
-          $crv = $_POST["crv"];
-          $cardexpiration = $_POST["cardexpiration"];
-          $cardname = $_POST["cardname"];
 
 
           // create connection
@@ -27,8 +26,8 @@
           }
 
           // register user
-          $sql = "INSERT INTO students (username, password, address, state, zipcode, cardnum, crv, cardexpiration, cardname)
-          VALUES ('$username', '$password', '$address','$state','$zipcode','$cardnum','$crv','$cardexpiration','$cardname')";
+          $sql = "INSERT INTO users (userid, username, userType, password, email, streetname, city, state, zipcode)
+          VALUES ('$userid', '$username', '$userType','$password','$email','$streetname','$city','$state','$zipcode')";
 
           $results = mysqli_query($conn, $sql);
           if ($results) {
