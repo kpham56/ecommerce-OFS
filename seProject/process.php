@@ -8,6 +8,8 @@
     <?php
       if (isset($_POST["email"])&&isset($_POST["password"])&&isset($_POST["email"])&&isset($_POST["streetname"])&&isset($_POST["city"])){
         if($_POST["email"] && $_POST["password"]){
+          $firstname = $_POST["firstname"];
+          $lastname = $_POST["lastname"];
           $userid = $_POST["userid"];
           $userType = $_POST["userType"];
           $password = $_POST["password"];
@@ -26,8 +28,8 @@
           }
 
           // register user
-          $sql = "INSERT INTO users (userid, username, userType, password, email, streetname, city, state, zipcode)
-          VALUES ('$userid', '$username', '$userType','$password','$email','$streetname','$city','$state','$zipcode')";
+          $sql = "INSERT INTO users (firstname, lastname, userid, username, userType, password, email, streetname, city, state, zipcode)
+          VALUES ('$firstname', '$lastname','$userid', '$username', '$userType','$password','$email','$streetname','$city','$state','$zipcode')";
 
           $results = mysqli_query($conn, $sql);
           if ($results) {
