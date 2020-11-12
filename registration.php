@@ -68,36 +68,8 @@
       <div class="col-lg-12">
         <div class="card mt-4">
           <div class="card-body">
-<<<<<<< HEAD
-            <h2>Register</h2>
-            <div style="padding: 20px">
-              <form action="process.php" class="needs-validation" novalidate method = "post">
-              <form action="/process.php" class="needs-validation" novalidate method = "post">
-                <div class="form-group" style="width: 20%">
-                  <label for="email">Email:</label>
-                  <input type="text" class="form-control" id="email" placeholder="Enter email" name="email" required>
-                  <div class="valid-feedback">Valid.</div>
-                  <div class="invalid-feedback">Please fill out this field.</div>
-                </div>
-                <div class="form-group" style="width: 20%">
-                  <label for="pwd">Password:</label>
-                  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
-                  <div class="valid-feedback">Valid.</div>
-                  <div class="invalid-feedback">Please fill out this field.</div>
-                </div>
-                <div class="form-group form-check">
-                  <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" name="terms" required> I agree with Terms and Conditions
-                    <div class="valid-feedback">Valid.</div>
-                    <div class="invalid-feedback">Agree with Terms and Conditions</div>
-                  </label>
-                </div>
-                <button type="submit" class="btn btn-success">Register</button>
-              </form>
-=======
             <div style="padding: 20px 20px 10px 40px">
               <h2>Register</h2>
->>>>>>> master
             </div>
 
             <div style="padding: 0px 80px 40px 60px">

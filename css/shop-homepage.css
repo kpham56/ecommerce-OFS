@@ -77,4 +77,22 @@ h1 {
   background-color: #666;
   color: white;
 }
+
+
+
+.imagebtn {
+  position: absolute;
+  top: 70%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: blue;
+  color: white;
+  font-size: 16px;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
 </style>

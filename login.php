@@ -5,19 +5,16 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Contact page">
+    <meta name="description" content="Log in page">
     <meta name="author" content="Hoai An Nguyen">
 
-    <title>Organic Food Store - Account</title>
+    <title>Organic Food Store - Log In</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
-
-    <!-- Bootstrap 4 icons -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
   </head>
 
@@ -46,15 +43,15 @@
               </a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link" data-toggle="dropdown" href="account.html">Account</a>
+              <a class="nav-link active" data-toggle="dropdown" href="account.html">Account</a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="login.html">Log In</a>
+                <a class="dropdown-item active" href="login.html">Log In</a>
                 <a class="dropdown-item" href="registration.html">Register</a>
                 <a class="dropdown-item" href="account.html">My Account</a>
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="contact.html">Contacts</a>
+              <a class="nav-link" href="contact.html">Contacts</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="cart.html">Shopping Cart</a>
@@ -68,46 +65,47 @@
     <div class="container">
 
       <div class="row">
-        <div class="col-lg-8">
+        <div class="col-lg-12">
           <div class="card mt-4">
-            <div class="card-body" style="padding: 65px;">
-              <h2>Store Location</h2>
-              <br>
-              <div class="map-responsive">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.2291349215443!2d-121.88600958525929!3d37.33708367984152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fccbebaf84547%3A0xe715e81a12fd97f7!2s96%20S%206th%20St%2C%20San%20Jose%2C%20CA%2095112!5e0!3m2!1sen!2sus!4v1603780012814!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            <div class="card-body">
+              <div style="padding: 20px 20px 10px 40px ">
+                <h2>Log In</h2>
+              </div>
+              <div style="padding: 0px 80px 60px 60px">
+                <form action="/processLogin.php" class="needs-validation" novalidate method = "post">
+                  <div class="form-group" style="width: 20%">
+                    <label for="email">Email:</label>
+                    <input type="text" class="form-control" id="email" placeholder="Enter email" name="email" required>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
+                  </div>
+                  <div class="form-group" style="width: 20%">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password" required>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
+                  </div>
+                  <div class="form-group form-check">
+                    <label class="form-check-label">
+                      <input class="form-check-input" type="checkbox" name="robot" required> I'm not a robot
+                      <div class="valid-feedback">Valid.</div>
+                      <div class="invalid-feedback">Are you a robot?</div>
+                    </label>
+                  </div>
+                  <button type="submit" class="btn btn-success">Log In</button>
+                </form>
+
               </div>
             </div>
           </div>
           <!-- /.card -->
+
         </div>
         <!-- /.col-lg-12 -->
-        <div class="col-lg-4">
-          <div style="padding: 45px">
-            <h4><i class="fas fa-map-marker-alt" style="font-size:24px; color:darkgreen;"></i>  Address</h4>
-            <div style="padding: 15px">
-              <p></i>Organic Food Store</p>
-              <p>96 S 6th St,</p>
-              <p>San Jose, CA 95112</p>
-            </div>
-            <br>
-            <h4><i class="far fa-clock" style="font-size:24px; color:darkgreen;"></i>  Store Hours</h4>
-            <div style="padding: 15px">
-              <p>Daily 9:00am-9:00pm</p>
-            </div>
-            <br>
-            <h4><i class="fas fa-phone" style="font-size:24px; color:darkgreen;"></i>  Phone number</h4>
-            <div style="padding: 15px">
-              <p>408-999-9999</p>
-            </div>
-            <br>
-            <h4><i class="fas fa-envelope-open-text" style="font-size:24px; color:darkgreen;"></i>  Email</h4>
-            <div style="padding: 15px">
-              <p><a href="customerservice@ofs.com">customerservice@ofs.com</a></p>
-            </div>
-            <br>
-          </div>
-        </div>
 
+        <div class="col-lg-4">
+
+        </div>
         <!-- /.col-lg-4 -->
       </div>
 
@@ -125,7 +123,26 @@
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Map JavaScript -->
+    <script>
+      // Disable form submissions if there are invalid fields
+      (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+          // Get the forms we want to add validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+      </script>
 
   </body>
 

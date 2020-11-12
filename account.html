@@ -79,108 +79,122 @@
               </div>
 
               <div id="Info" class="tabcontent">
-                <h4>Profile and Password</h4>
+                <div style="padding: 20px 60px 40px 60px">
+                  <h4>Profile and Password</h4>
+                  <div class="Mycontainer">
+                    <form>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="fname" class="control-label">First Name</label>
+                          <input type="text" class="form-control" id="fname" disabled placeholder="First Name">
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="lname" class="control-label">Last Name</label>
+                          <input type="text" class="form-control" id="lname" disabled placeholder="Last Name">
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="inputEmail4" class="control-label">Email</label>
+                          <input type="email" class="form-control" id="email" disabled placeholder="Email">
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="inputPassword4" class="control-label">Password</label>
+                          <input type="password" class="form-control" id="psw" disabled placeholder="Password">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="address" class="control-label">Address</label>
+                        <input type="text" class="form-control" id="address" disabled placeholder="Street, apartment, studio, or floor">
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="inputCity" class="control-label">City</label>
+                          <input type="text" class="form-control" id="city" disabled>
+                        </div>
+                        <div class="form-group col-md-4">
+                          <label for="inputState" class="control-label">State</label>
+                          <input type="text" class="form-control" id="state" disabled>
+                        </div>
+                        <div class="form-group col-md-2">
+                          <label for="inputZip" class="control-label">Zip</label>
+                          <input type="text" class="form-control" id="zip" disabled>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                          <button type="edit" class="btn btn-success" id="edit" onclick="return handleEdit()">Edit</button>
+                          <button type="submit" class="btn btn-success" id="save" hidden>Save Changes</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <div id="Orders" class="tabcontent">
+                <div style="padding: 20px 50px 40px 50px">
+                  <h4>Previous Orders</h4>
+                  <br>
+                  <!-- Insert Table from database -->
+                </div>
+              </div>
+
+
+
+              <div id="Payment" class="tabcontent">
                 <div class="Mycontainer">
                   <form>
-                    <div class="form-row">
-                      <div class="form-group col-md-6">
-                        <label for="fname" class="control-label">First Name</label>
-                        <input type="text" class="form-control" id="fname" disabled placeholder="First Name">
-                      </div>
-                      <div class="form-group col-md-6">
-                        <label for="lname" class="control-label">Last Name</label>
-                        <input type="text" class="form-control" id="lname" disabled placeholder="Last Name">
-                      </div>
-                    </div>
-                    <div class="form-row">
-                      <div class="form-group col-md-6">
-                        <label for="inputEmail4" class="control-label">Email</label>
-                        <input type="email" class="form-control" id="email" disabled placeholder="Email">
-                      </div>
-                      <div class="form-group col-md-6">
-                        <label for="inputPassword4" class="control-label">Password</label>
-                        <input type="password" class="form-control" id="psw" disabled placeholder="Password">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="address" class="control-label">Address</label>
-                      <input type="text" class="form-control" id="address" disabled placeholder="Apartment, studio, or floor">
-                    </div>
-                    <div class="form-row">
-                      <div class="form-group col-md-6">
-                        <label for="inputCity" class="control-label">City</label>
-                        <input type="text" class="form-control" id="city" disabled>
-                      </div>
-                      <div class="form-group col-md-4">
-                        <label for="inputState" class="control-label">State</label>
-                        <input type="text" class="form-control" id="state" disabled>
-                      </div>
-                      <div class="form-group col-md-2">
-                        <label for="inputZip" class="control-label">Zip</label>
-                        <input type="text" class="form-control" id="zip" disabled>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="col-sm-offset-2 col-sm-10">
-                        <button type="edit" class="btn btn-success" id="edit" onclick="return handleEdit()">Edit</button>
-                        <button type="submit" class="btn btn-success" id="save" hidden>Save Changes</button>
-                      </div>
-                    </div>
+                    <div style="padding: 20px 50px 40px 50px">
+                      <h4>Payment Method</h4>
+                      <div style="padding: 20px 40px 40px 40px">
+                        <div class="card-logos">
+                          <a href="https://www.freepnglogos.com/images/visa-logo-png-2026.html" title="Image from freepnglogos.com"><img src="https://www.freepnglogos.com/uploads/visa-and-mastercard-logo-26.png" width="200" alt="visa and mastercard logo" /></a>
+                        </div>
+                        <br>
+                        <h5>Credit or debit card</h5>
+                        <br>
+                          <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label for="fnameCard" class="control-label">Cardholder's Name</label>
+                              <input type="text" class="form-control" id="cardholder" disabled placeholder="First Name Last name">
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label for="lnameCard" class="control-label">Card Number</label>
+                              <input type="text" class="form-control" id="cardnumber" disabled placeholder="Card Number">
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="form-group col-md-4">
+                              <label for="expirationM" class="control-label">Month</label>
+                              <input type="text" class="form-control" id="expirationM" disabled placeholder="MM">
+                            </div>
+                            <div class="form-group col-md-4">
+                              <label for="expirationY" class="control-label">Year</label>
+                              <input type="text" class="form-control" id="expirationY" disabled placeholder="YY" >
+                            </div>
+                            <div class="form-group col-md-4">
+                              <label for="securityC" class="control-label">Security Code</label>
+                              <input type="text" class="form-control" id="securityCode" disabled  placeholder="CVC">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="col-sm-offset-2 col-sm-10">
+                            <button type="edit" class="btn btn-success" id="editPayment" onclick="return handlePaymentEdit()">Edit</button>
+                            <button type="submit" class="btn btn-success" id="savePayment" hidden>Save Changes</button>
+                          </div>
+                        </div>
+                     </div>
                   </form>
 
                 </div>
               </div>
 
-              <div id="Orders" class="tabcontent">
-                <h4>Previous Orders</h4>
-                <br>
-                <!-- Insert from database -->
-              </div>
-              <form>
-                <div id="Payment" class="tabcontent">
-                  <h4>Payment Method</h4>
-                  <br>
-                  <h6>Credit or debit card</h6>
-                  <form>
-                    <div class="form-row">
-                      <div class="form-group col-md-6">
-                        <label for="fnameCard" class="control-label">First Name</label>
-                        <input type="text" class="form-control" id="fnameCard" disabled placeholder="First Name">
-                      </div>
-                      <div class="form-group col-md-6">
-                        <label for="lnameCard" class="control-label">Last Name</label>
-                        <input type="text" class="form-control" id="lnameCard" disabled placeholder="Last Name">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="card" class="control-label">Card Number</label>
-                      <input type="text" class="form-control" id="card" disabled placeholder="Card Number">
-                    </div>
-                    <div class="form-row">
-                      <div class="form-group col-md-4">
-                        <label for="expirationM" class="control-label">Month</label>
-                        <input type="text" class="form-control" id="expirationM" disabled>
-                      </div>
-                      <div class="form-group col-md-4">
-                        <label for="expirationY" class="control-label">Year</label>
-                        <input type="text" class="form-control" id="expirationY" disabled>
-                      </div>
-                      <div class="form-group col-md-4">
-                        <label for="securityC" class="control-label">Security Code</label>
-                        <input type="text" class="form-control" id="securityCode" disabled>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="col-sm-offset-2 col-sm-10">
-                        <button type="editPayment" class="btn btn-success" id="editPayment" onclick="return handlePaymentEdit()">Edit</button>
-                        <button type="submit" class="btn btn-success" id="savePayment" hidden>Save Changes</button>
-                      </div>
-                    </div>
-                  </form>
-              </div>
-
-              </div>
-            </div>
+           </div>
+        </div>
           <!-- /.card -->
 
         </div>
@@ -241,9 +255,8 @@
       }
 
       function handlePaymentEdit() {
-        document.getElementById('fnameCard').disabled = false;
-        document.getElementById('lnameCard').disabled = false;
-        document.getElementById('card').disabled = false;
+        document.getElementById('cardholder').disabled = false;
+        document.getElementById('cardnumber').disabled = false;
         document.getElementById('expirationM').disabled = false;
         document.getElementById('expirationY').disabled = false;
         document.getElementById('securityCode').disabled = false;

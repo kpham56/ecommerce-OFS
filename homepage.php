@@ -642,7 +642,7 @@
               <h4 class="card-title">
                 <a href="#">Organic Tomatoes</a>
               </h4>
-              <h5>$2.12</h5>
+              <h5>$2.12/lb</h5>
             </div>
             <div class="card-footer">
               <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -720,6 +720,128 @@
                 <a href="#">Organic Vanilla Yogurt</a>
               </h4>
               <h5>$4.99</h5>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="column dairy">
+          <div class="card h-60">
+            <a href="#"><img class="card-img-top" src="pic/chocolatemilk.jpg" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">Organic Chocolate Milk</a>
+              </h4>
+              <h5>$4.19</h5>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="column dairy">
+          <div class="card h-60">
+            <a href="#"><img class="card-img-top" src="pic/sourcream.jpg" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">Organic Sour Cream</a>
+              </h4>
+              <h5>$5.08</h5>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="column meat">
+          <div class="card h-60">
+            <a href="#"><img class="card-img-top" src="pic/lambshank.jpeg" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">Organic Lamb Shank</a>
+              </h4>
+              <h5>$8.08/lb</h5>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="column meat">
+          <div class="card h-60">
+            <a href="#"><img class="card-img-top" src="pic/backribs.jpg" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">Organic Back Ribs</a>
+              </h4>
+              <h5>$5.00/lb</h5>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="column snacks">
+          <div class="card h-60">
+            <a href="#"><img class="card-img-top" src="pic/chocolatebar.jpg" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">Organic Chocolate Bar</a>
+              </h4>
+              <h5>$3.29</h5>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="column snacks">
+          <div class="card h-60">
+            <a href="#"><img class="card-img-top" src="pic/chocolatecookies.jpg" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">Chocolate Chips Cookies</a>
+              </h4>
+              <h5>$3.48</h5>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="column produce">
+          <div class="card h-60">
+            <a href="#"><img class="card-img-top" src="pic/grapes.jpg" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">Organic Red Grapes</a>
+              </h4>
+              <h5>$3.49/lb</h5>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="column snacks">
+          <div class="card h-60">
+            <a href="#"><img class="card-img-top" src="pic/greengrapes.jpg" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">Organic Green Grapes</a>
+              </h4>
+              <h5>$3.00/lb</h5>
             </div>
             <div class="card-footer">
               <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>
