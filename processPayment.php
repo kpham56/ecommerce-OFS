@@ -1,17 +1,21 @@
 <html>
   <head>
-    <title> Processing File</title>
+    <title> Processing payment</title>
   </head>
   <body>
     <h1> Processing</h1>
     <?php
-      if (isset($_POST["email"])&&isset($_POST["password"])&&isset($_POST["streetname"])&&isset($_POST["city"])){
 
-          $firstname = $_POST["fname"];
-          $lastname = $_POST["lname"];
-          //$userid = $_POST["userid"];
-          //$userType = $_POST["userType"];
-          $password = $_POST["password"];
+      if (isset($_POST["firstname"])&&isset($_POST["lastname"])&&isset($_POST["cardDigits"])){
+
+          $firstname = $_POST["firstname"];
+          $lastname = $_POST["lastname"];
+          $name = $firstname." ".$lastname;
+          $card = $_POST["cardDigits"];
+          $month = $_POST["expMonth"];
+          $year = $_POST["expYear"];
+          $exp = $month.$year;
+          $cvc = $_POST["code"];
           $email = $_POST["email"];
           $streetname = $_POST["streetname"];
           $city = $_POST["city"];
@@ -27,8 +31,10 @@
           }
 
           // register user
-          $sql = "INSERT INTO users (firstname, lastname, password, email, streetname, city, state, zipcode) VALUES ('$firstname', '$lastname', '$password','$email','$streetname','$city','$state','$zipcode')";
-
+          $uid = mysqli_query($conn,"SELECT userID FROM users where email = '$email'");
+          $id = mysqli_fetch_row($uid);
+          //echo $id[0];
+          $sql = "INSERT INTO payment (cardNumber, name, userID, secure, expiration) VALUES ('$card', '$name', '$id[0]', '$cvc','$exp')";
           $results = mysqli_query($conn, $sql);
           if ($results) {
             echo "The user has been added.";
@@ -39,7 +45,7 @@
            mysqli_close($conn); // close connection
 
     } else{
-      echo "Form was not submitted";
+      echo "Form was not filled correctly";
     }
     ?>
 

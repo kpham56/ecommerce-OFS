@@ -10,12 +10,12 @@
     $username = $_POST["email"];
     $password = $_POST["pswd"];
     #making connection
-    $conn = mysqli_connect("localhost", "root","password","OFSaccounts");
+    $conn = mysqli_connect("localhost", "root","","users");
     if (!$conn){
       die ("Connection Failed: " . mysqli_connect_error());
         }
 
-    $sql = "SELECT password FROM accounts where email = '$username'";
+    $sql = "SELECT password FROM users where email = '$username'";
 
     #printing results
     $results = mysqli_query($conn, $sql);
@@ -31,8 +31,6 @@
         echo "<h1> Login Failed</h1>";
         echo "No matches to user and password in database";
       }
-      }else{
-        echo mysqli_error();
       }
     }
 
