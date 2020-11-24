@@ -20,46 +20,8 @@
 
 <body>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <img src="pic/logogrape.png" alt="OFS Store logo" style="width:5%; padding: 3px 5px 3px 3px;">
-      <a class="navbar-brand" href="homepage.html">Organic Food Store</a>
-
-      <!-- Search -->
-      <form class="form-inline" action="/action_page.php">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search">
-        <button class="btn btn-success" type="submit">Search</button>
-      </form>
-
-      <!-- Navigaton tabs -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="homepage.html">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link active" data-toggle="dropdown" href="account.html">Account</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="login.html">Log In</a>
-              <a class="dropdown-item active" href="registration.html">Register</a>
-              <a class="dropdown-item" href="account.html">My Account</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contacts</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="cart.html">Shopping Cart</a>
-          </li>
-        </ul>
-    </div>
-  </nav>
-  <hr>
+     <!-- Navigation -->
+     <?php include 'components/navigation-bar.php'; ?>
 
   <!-- Page Content -->
   <div class="container">
@@ -74,11 +36,12 @@
 
             <div style="padding: 0px 80px 40px 60px">
               <div class="Mycontainer">
-                <form action="/process.php" class="needs-validation" novalidate method = "post">
+
+                <form name="user-registration" action="/php/authentication.php" class="needs-validation" method = "POST">
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="inputEmail4" class="control-label">Email</label>
-                      <input type="email" class="form-control" id="email" placeholder="bob@example.com" name="email" required>
+                      <input type="email" class="form-control" id="email" name="email" placeholder="bob@example.com"  required>
                       <div class="valid-feedback">Valid.</div>
                       <div class="invalid-feedback">Email is not valid.</div>
                     </div>
@@ -95,14 +58,14 @@
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="fname" class="control-label">First Name</label>
-                      <input type="text" class="form-control" id="fname"  placeholder="First Name" required>
+                      <input type="text" class="form-control" id="fname" name="fname" placeholder="First Name" required>
                       <div class="valid-feedback">Valid.</div>
                       <div class="invalid-feedback">Please fill out this field.</div>
                     </div>
 
                     <div class="form-group col-md-6">
                       <label for="lname" class="control-label">Last Name</label>
-                      <input type="text" class="form-control" id="lname"  placeholder="Last Name" required>
+                      <input type="text" class="form-control" id="lname"  name="lname" placeholder="Last Name" required>
                       <div class="valid-feedback">Valid.</div>
                       <div class="invalid-feedback">Please fill out this field.</div>
                     </div>
@@ -111,26 +74,26 @@
 
                   <div class="form-group">
                     <label for="address" class="control-label">Address</label>
-                    <input type="text" class="form-control" id="address"  placeholder="Street, apartment, studio, or floor" required>
+                    <input type="text" class="form-control" id="address" name="address" placeholder="Street, apartment, studio, or floor" required>
                   </div>
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="inputCity" class="control-label">City</label>
-                      <input type="text" class="form-control" id="city" placeholder="San Jose" required>
+                      <input type="text" class="form-control" id="city" name="city" placeholder="San Jose" required>
                       <div class="valid-feedback">Valid.</div>
                       <div class="invalid-feedback">Please fill out this field.</div>
                     </div>
 
                     <div class="form-group col-md-4">
                       <label for="inputState" class="control-label">State</label>
-                      <input type="text" class="form-control" id="state" placeholder="CA" required>
+                      <input type="text" class="form-control" id="state" name="state" placeholder="CA" required>
                       <div class="valid-feedback">Valid.</div>
                       <div class="invalid-feedback">Please fill out this field.</div>
                     </div>
 
                     <div class="form-group col-md-2">
                       <label for="inputZip" class="control-label">Zip</label>
-                      <input type="text" class="form-control" id="zip" placeholder="99999" required>
+                      <input type="text" class="form-control" id="zip" name="zip" placeholder="99999" required>
                       <div class="valid-feedback">Valid.</div>
                       <div class="invalid-feedback">Please fill out this field.</div>
                     </div>
@@ -143,7 +106,7 @@
                     </div>
                   </div>
 
-                  <button type="submit" class="btn btn-success">Register</button>
+                  <button type="submit" class="btn btn-success" name="user_registration">Register</button>
                 </form>
               </div>
           </div>

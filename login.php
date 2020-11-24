@@ -1,3 +1,6 @@
+<?php
+  session_start();    
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,46 +23,9 @@
 
   <body>
 
+
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-          <img src="pic/logogrape.png" alt="OFS Store logo" style="width:5%; padding: 3px 5px 3px 3px;">
-        <a class="navbar-brand" href="homepage.html">Organic Food Store</a>
-
-        <!-- Search -->
-        <form class="form-inline" action="/action_page.php">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search">
-          <button class="btn btn-success" type="submit">Search</button>
-        </form>
-
-        <!-- Navigaton tabs -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="homepage.html">Home
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link active" data-toggle="dropdown" href="account.html">Account</a>
-              <div class="dropdown-menu">
-                <a class="dropdown-item active" href="login.html">Log In</a>
-                <a class="dropdown-item" href="registration.html">Register</a>
-                <a class="dropdown-item" href="account.html">My Account</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contacts</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="cart.html">Shopping Cart</a>
-            </li>
-          </ul>
-      </div>
-    </nav>
-    <hr>
+    <?php include 'components/navigation-bar.php'; ?>
 
     <!-- Page Content -->
     <div class="container">
@@ -72,7 +38,7 @@
                 <h2>Log In</h2>
               </div>
               <div style="padding: 0px 80px 60px 60px">
-                <form action="/processLogin.php" class="needs-validation" novalidate method = "post">
+                <form action="/php/authentication.php" class="needs-validation" novalidate method = "post">
                   <div class="form-group" style="width: 20%">
                     <label for="email">Email:</label>
                     <input type="text" class="form-control" id="email" placeholder="Enter email" name="email" required>
@@ -92,7 +58,7 @@
                       <div class="invalid-feedback">Are you a robot?</div>
                     </label>
                   </div>
-                  <button type="submit" class="btn btn-success">Log In</button>
+                  <button type="submit" class="btn btn-success" name="user_login">Log In</button>
                 </form>
 
               </div>
