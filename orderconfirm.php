@@ -23,15 +23,16 @@
     <!-- Navigation -->
     <?php include 'components/navigation-bar.php';
     include('php/connect.php');
+
     $email = $_SESSION['email'];
     $sqllname = "SELECT * FROM users WHERE email = '$email'";
     $lname = mysqli_query($con, $sqllname);
     $usersTable = mysqli_fetch_array($lname);
     $uID = $usersTable['userID'];
+    $price = $_SESSION['total'];
     $orderID = uniqid();
-    $total = 10.00; // NOT CONNECTED TO CART YET
     $date = date('Y-m-d');
-    $sql2 = "INSERT INTO orderstatus (orderID, userID, price, orderDate) VALUES ('$orderID', '$uID', '$total', '$date')";
+    $sql2 = "INSERT INTO orderstatus (orderID, userID, price, orderDate) VALUES ('$orderID', '$uID', '$price', '$date')";
     $payq = mysqli_query($con, $sql2);
     ?>
 

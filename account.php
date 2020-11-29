@@ -237,9 +237,6 @@
         document.getElementById('securityCode').disabled = false;
         document.getElementById('editPayment').hidden = true;
         document.getElementById('savePayment').hidden = false;
-        <?php
-
-         ?>
 
         return false;
       }
