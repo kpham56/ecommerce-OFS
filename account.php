@@ -28,15 +28,15 @@
 
     <!-- Navigation -->
     <?php include 'components/navigation-bar.php'; ?>
-    <?php 
-      
+    <?php
+
       include('php/connect.php');
-      $email = $_SESSION['email']; 
-      $sqllname = "SELECT * FROM users WHERE email = '$email'";  
+      $email = $_SESSION['email'];
+      $sqllname = "SELECT * FROM users WHERE email = '$email'";
       $lname = mysqli_query($con, $sqllname);
 
-      
-      $result = mysqli_fetch_array($lname); 
+
+      $result = mysqli_fetch_array($lname);
     ?>
     <!-- Page Content -->
     <div class="container">
@@ -134,7 +134,7 @@
                           <div class="form-row">
                             <div class="form-group col-md-6">
                               <label for="fnameCard" class="control-label">Cardholder's Name</label>
-                              <input type="text" class="form-control" id="cardholder" disabled placeholder="First Name Last name">
+                              <input type="text" class="form-control" id="cardholder" disabled placeholder="First Name Last name" name = "cardHolderName">
                             </div>
                             <div class="form-group col-md-6">
                               <label for="lnameCard" class="control-label">Card Number</label>
@@ -237,6 +237,9 @@
         document.getElementById('securityCode').disabled = false;
         document.getElementById('editPayment').hidden = true;
         document.getElementById('savePayment').hidden = false;
+        <?php
+
+         ?>
 
         return false;
       }

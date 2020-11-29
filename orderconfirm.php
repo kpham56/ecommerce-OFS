@@ -21,9 +21,19 @@
   <body>
 
     <!-- Navigation -->
-    <?php include 'components/navigation-bar.php'; ?>
-
-    <!-- Page Content -->
+    <?php include 'components/navigation-bar.php';
+    include('php/connect.php');
+    $email = $_SESSION['email'];
+    $sqllname = "SELECT * FROM users WHERE email = '$email'";
+    $lname = mysqli_query($con, $sqllname);
+    $usersTable = mysqli_fetch_array($lname);
+    $uID = $usersTable['userID'];
+    $orderID = uniqid();
+    $total = 10.00; // NOT CONNECTED TO CART YET
+    $date = date('Y-m-d');
+    $sql2 = "INSERT INTO orderstatus (orderID, userID, price, orderDate) VALUES ('$orderID', '$uID', '$total', '$date')";
+    $payq = mysqli_query($con, $sql2);
+    ?>
 
 
     <div class="container">
@@ -33,8 +43,8 @@
           <div class="card mt-4">
             <div class="card-body">
               <div style="padding: 20px 80px 40px 80px">
-                <h2>Order #<?php echo $_POST["orderNumber"]; ?> was successufully placed.</h2>
-                <p>Confirmation email will be sent to <?php echo $_POST["email"]; ?></p>
+                <h2>Order #<?php echo $orderID ?> was successufully placed.</h2>
+                <p>Confirmation email will be sent to <?php echo $email; ?></p>
               </div>
             </div>
           </div>

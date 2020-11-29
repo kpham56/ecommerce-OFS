@@ -33,7 +33,7 @@
     $fullName = $usersTable['firstname']. ' ' .$usersTable['lastname'];
 
     // Getting values from users table
-    $uID = $usersTable['userid'];
+    $uID = $usersTable['userID'];
     $sqlPay = "SELECT * FROM payment where userID = '$uID'";
     $pay = mysqli_query($con,$sqlPay);
     $paymentTable = mysqli_fetch_array($pay);
@@ -56,35 +56,32 @@
           <div class="card mt-4">
             <div class="card-body">
              <h2>Checkout</h2>
-             <form action="/action_page.php">
+             <form action="orderconfirm.php">
 
               <div class="row">
                 <div class="col-50" style="padding: 20px 60px 40px 60px">
                   <h4>Billing Address</h4>
                   <div style="padding: 20px 40px 40px 40px">
                     <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-                    <input type="text" id="fname" name="firstname" placeholder="John M. Doe" value ="<?php echo $fullName;?>" >
+                    <input type="text" id="fname" name="firstname" placeholder="John M. Doe" value ="<?php echo $fullName;?>" required>
                     <label for="email"><i class="fa fa-envelope"></i> Email</label>
-                    <input type="text" id="email" name="email" placeholder="john@example.com" value = "<?php echo $usersTable['email'];?>">
+                    <input type="text" id="email" name="email" placeholder="john@example.com" value = "<?php echo $usersTable['email'];?>" required>
                     <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-                    <input type="text" id="adr" name="address" placeholder="542 W. 15th Street" value = "<?php echo $usersTable['streetname'];?>">
+                    <input type="text" id="adr" name="address" placeholder="542 W. 15th Street" value = "<?php echo $usersTable['streetname'];?>" required>
                     <label for="city"><i class="fa fa-institution"></i> City</label>
-                    <input type="text" id="city" name="city" placeholder="New York" value = "<?php echo $usersTable['city'];?>">
+                    <input type="text" id="city" name="city" placeholder="New York" value = "<?php echo $usersTable['city'];?>" required>
 
                     <div class="row">
                       <div class="col-lg-4">
                         <label for="state">State</label>
-                        <input type="text" id="state" name="state" placeholder="NY" value = "<?php echo $usersTable['state'];?>">
+                        <input type="text" id="state" name="state" placeholder="NY" value = "<?php echo $usersTable['state'];?>" required>
                       </div>
                       <div class="col-lg-4">
                         <label for="zip">Zip</label>
-                        <input type="text" id="zip" name="zip" placeholder="10001" value = "<?php echo $usersTable['zipcode'];?>">
+                        <input type="text" id="zip" name="zip" placeholder="10001" value = "<?php echo $usersTable['zipcode'];?>" min = "10000" max = "99999" pattern="[0-9]{5}" required>
                       </div>
                     </div>
                   </div>
-                  <label>
-                    <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
-                  </label>
                 </div>
 
                 <div class="row">
@@ -105,25 +102,25 @@
                           </div>
                           <div class="form-group col-md-6">
                             <label for="lnameCard" class="control-label">Card Number</label>
-                            <input type="text" class="form-control" id="cardnumber"  placeholder="Card Number" value="<?php echo $paymentTable['cardNumber'];?>">
+                            <input type="number" class="form-control" id="cardnumber"  placeholder="Card Number" value="<?php echo $paymentTable['cardNumber'];?>" min = "111111111111111" max = "9999999999999999" pattern="[0-9]{15}" required>
                           </div>
                         </div>
                         <div class="form-row">
                           <div class="form-group col-md-4">
                             <label for="expirationM" class="control-label">Month</label>
-                            <input type="text" class="form-control" id="expirationM" placeholder="MM" value="<?php echo $expMonth;?>">
+                            <input type="number" class="form-control" id="expirationM" placeholder="MM" value="<?php echo $expMonth;?>" min = "01" max = "12" pattern="[1-12]{2}" required>
                           </div>
                           <div class="form-group col-md-4">
                             <label for="expirationY" class="control-label">Year</label>
-                            <input type="text" class="form-control" id="expirationY" placeholder="YY" value="<?php echo $expYear;?>">
+                            <input type="number" class="form-control" id="expirationY" placeholder="YY" value="<?php echo $expYear;?>" min = "20" max = "26" pattern="[0-9]{3}" required>
                           </div>
                           <div class="form-group col-md-4">
                             <label for="securityC" class="control-label">Security Code</label>
-                            <input type="text" class="form-control" id="securityCode"  placeholder="CVC" value="<?php echo $paymentTable['secure'];?>">
+                            <input type="number" class="form-control" id="securityCode"  placeholder="CVC" value="<?php echo $paymentTable['secure'];?>" min = "001" max = "999" pattern="[0-9]{3}" required>
                           </div>
                         </div>
                       </div>
-                    <input type="submit" value="Place Order" class="btn">
+                    <input type="submit" value="Place Order" class="btn" >
                    </div>
                   </form>
               </div>

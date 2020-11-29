@@ -169,7 +169,14 @@ if(isset($_GET["clearall"]))
 
 
                     <div class="cart-controls">
-                      <a href="checkout.php" class="checkout">Begin Checkout</a>
+                      <?php
+                      // 0 = disabled, 1 = none, 2 = active
+                      if (session_status() == 2){
+                      echo '<a href="checkout.php" class="checkout">Begin Checkout</a>';
+                    } else {
+                      echo "please log in before ordering.";
+                    }
+                      ?>
                       <a href="homepage.php" class="back-to-browsing nav-link">Back to Browsing</a>
 
                     </div>
